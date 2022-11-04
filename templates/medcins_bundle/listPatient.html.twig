@@ -1,0 +1,11 @@
+<h1>  liste Patient </h1>
+{% for patient in patients %}
+<h3> {{ patient.name }} {{ patient.getPrenom() }} </h3> 
+<ul> 
+    <li> ID :  {{ patient.getId() }} </li>
+    <li> Date : {{ patient.getDate()|date('d-m-Y') }} </li>
+    <li> Heure : {{ patient.getHeure() }} </li>
+    <li> Medecine :{{ patient.getMedecin().libelle }} </li>
+
+</ul>
+{% endfor %}

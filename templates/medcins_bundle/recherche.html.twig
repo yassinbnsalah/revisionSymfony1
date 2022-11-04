@@ -1,0 +1,24 @@
+<h1> recherche Patient </h1> 
+{{ form (f)}}
+
+<h1> Liste des Patients </h1> 
+<table border="2"> 
+    <tr>
+        <td> ID </td>
+        <td> name </td> 
+        <td> prenom </td>
+        <td> Date </td>
+        <td> heure </td> 
+        <td> Medecine </td>
+    </tr> 
+    {% for  patient in patients %}
+    <tr>
+        <td>  {{ patient.getId() }} </td>
+        <td> {{ patient.name }} </td> 
+        <td> {{ patient.getPrenom() }} </td>
+        <td> {{ patient.getDate()|date('d-m-Y') }} </td>
+        <td> {{ patient.getHeure() }} </td> 
+        <td> {{ patient.getMedecin().libelle }} </td>
+    </tr> 
+    {% endfor %}
+</table>
